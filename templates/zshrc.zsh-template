@@ -1,0 +1,14 @@
+# If you move the directory to another location, 
+# make sure to fill that corresponding 
+# directory in here.
+export ZSH="$HOME/.microzsh"
+
+# Fill in the name of your installed theme here
+ZSH_THEME=""
+
+# Here you can write a list of plugins
+# Do NOT separate the entries with a comma, this 
+# WILL break everything
+plugins=()
+
+source $ZSH/microzsh.zsh
