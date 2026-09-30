@@ -62,6 +62,7 @@ if [[ -n "$ZSH_THEME" && -f "$THEMES/$ZSH_THEME.zsh-theme" ]]; then
     source "$THEMES/$ZSH_THEME.zsh-theme"
 fi
 
+# Universal framework management CLI engine
 microzsh() {
   if [[ "$1" == "update" ]]; then
     if [[ -f "$ZSH/tools/update.zsh" ]]; then
@@ -69,8 +70,13 @@ microzsh() {
     else
       echo "Error: Update script could not be found."
     fi
+  elif [[ "$1" == "reload" ]]; then
+    autoload -U compinit && compinit
+    
+    exec zsh
   else
     echo "MicroZsh Commands:"
     echo "  microzsh update  - Update MicroZsh to the newest available version."
+    echo "  microzsh reload  - Reload the current terminal shell session."
   fi
 }
