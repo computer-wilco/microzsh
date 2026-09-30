@@ -24,7 +24,7 @@ cd "$ZSH"
 print_msg "Updating MicroZsh..."
 
 if git pull --rebase --stat origin master; then
-  print_msg "${FMT_GREEN}Updated successfully!${FMT_RESET}"
+  print_msg "Updated successfully!"
   printf "${FMT_GREEN}${FMT_BOLD}MicroZsh is now up to date!${FMT_RESET}\n"
   cd "$old_pwd"
 else
