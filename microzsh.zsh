@@ -54,7 +54,7 @@ load_plugin() {
 }
 
 # load the plugins in the exact order specified by the user
-for plugin in $plugins; do
+for plugin in "${plugins[@]}"; do
     load_plugin "$plugin"
 done
 
