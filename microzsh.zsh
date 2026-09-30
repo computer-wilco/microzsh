@@ -42,10 +42,9 @@ fi
 
 # universal plugin loader function
 load_plugin() {
-    local plugin_name=$1
-    for entry in "$PLUGINS/$plugin_name/$plugin_name.plugin.zsh" \
-                  "$PLUGINS/$plugin_name/$plugin_name.zsh" \
-                  "$PLUGINS/$plugin_name/$plugin_name.sh"; do
+    local p_name="$1"
+    
+    for entry in "$PLUGINS/$p_name/$p_name.plugin.zsh" "$PLUGINS/$p_name/$p_name.zsh" "$PLUGINS/$p_name/$p_name.sh"; do
         if [[ -f "$entry" ]]; then
             source "$entry"
             return 0
